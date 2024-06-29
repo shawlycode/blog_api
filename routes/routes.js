@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { add_newBlog } from "../controllers/blog_controllers.js";
 
 // store router in a variable
 const blogApi_route = Router();
@@ -6,14 +7,16 @@ const blogApi_route = Router();
 //define endpoints
 
 //all blogs
-blogApi_route.get('/blogs', (req, res) => {
-  res.json('All blogs');
-})
+// blogApi_route.get('/blogs', (req, res) => {
+//   res.json('All blogs');
+// })
+
+blogApi_route.post('/blog', add_newBlog);
 
 //post a blog
-blogApi_route.post('/blog', (req, res) => {
-  res.json('My new blog');
-})
+// blogApi_route.post('/blog', (req, res) => {
+//   res.json('My new blog');
+// })
 
 //get a single blog by ID
 blogApi_route.get('/blog/:id', (req, res) => {
