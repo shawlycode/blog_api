@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { add_newBlog } from "../controllers/blog_controllers.js";
+import { addBlog, get_Blogs } from "../controllers/blog_controllers.js";
 
 // store router in a variable
 const blogApi_route = Router();
@@ -11,7 +11,8 @@ const blogApi_route = Router();
 //   res.json('All blogs');
 // })
 
-blogApi_route.post('/blog', add_newBlog);
+blogApi_route.post('/blog', addBlog);
+blogApi_route.get('/blogs', get_Blogs)
 
 //post a blog
 // blogApi_route.post('/blog', (req, res) => {
@@ -19,19 +20,19 @@ blogApi_route.post('/blog', add_newBlog);
 // })
 
 //get a single blog by ID
-blogApi_route.get('/blog/:id', (req, res) => {
-  res.json(`You open blog ${req.params.id}`)
-})
+// blogApi_route.get('/blog/:id', (req, res) => {
+//   res.json(`You open blog ${req.params.id}`)
+// })
 
 //update a blog by ID
-blogApi_route.patch('/blog/:id', (req, res) => {
-  res.json(`Blog ${req.params.id} updated`)
-})
+// blogApi_route.patch('/blog/:id', (req, res) => {
+//   res.json(`Blog ${req.params.id} updated`)
+// })
 
 //delete a blog by ID
-blogApi_route.delete('/blog/:id', (req, res) => {
-  res.json(`Blog ${req.params.id} deleted successfully`)
-})
+// blogApi_route.delete('/blog/:id', (req, res) => {
+//   res.json(`Blog ${req.params.id} deleted successfully`)
+// })
 
 
 export default blogApi_route;

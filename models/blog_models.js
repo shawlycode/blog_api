@@ -17,9 +17,10 @@ const blogSchema = new Schema({
   blogContent: { type: String },
   blogImage: { type: String },
   author: { type: String },
-  createdAt: { type: Date },
-  UpdatedAt: { type: Date }
-});
+},
+  {
+    timestamps: true
+  });
 
 
 export const blogModel = model('blog', blogSchema);
