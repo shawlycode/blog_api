@@ -17,12 +17,13 @@ const blogSchema = new Schema({
   blogContent: { type: String },
   blogImage: { type: String },
   author: { type: String },
+  blogStatus: { type: String, enum: ["New", "Old", "Updated"] }
 },
   {
     timestamps: true
   });
 
-
+//calling plugin(normalize-mongoose)
 blogSchema.plugin(normalize)
 
 export const blogModel = model('blog', blogSchema);

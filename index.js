@@ -18,8 +18,8 @@ blogApp.get('/', (req, res) => {
 
 
 //listening to server
-blogApp.listen(8000, () => {
-  console.log('App is listening to port 8000')
+blogApp.listen(8999, () => {
+  console.log('App is listening to port 8999')
 })
 
 
