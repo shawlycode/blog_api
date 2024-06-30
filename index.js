@@ -6,10 +6,11 @@ import mongoose from 'mongoose';
 
 //create express server
 const blogApp = express();
-blogApp.use(blogApi_route);
+blogApp.use(express.json())
 
 //import and call db connection fnc
 dbConnection()
+blogApp.use(blogApi_route);
 
 blogApp.get('/', (req, res) => {
   res.get('Server started')
@@ -20,3 +21,5 @@ blogApp.get('/', (req, res) => {
 blogApp.listen(8000, () => {
   console.log('App is listening to port 8000')
 })
+
+
