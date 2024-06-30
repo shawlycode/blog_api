@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-
+import normalize from 'normalize-mongoose'
 //define schema
 const blogSchema = new Schema({
   blogTitle: { type: String },
@@ -22,5 +22,7 @@ const blogSchema = new Schema({
     timestamps: true
   });
 
+
+blogSchema.plugin(normalize)
 
 export const blogModel = model('blog', blogSchema);
